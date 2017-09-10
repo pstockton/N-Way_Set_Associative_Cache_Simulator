@@ -184,34 +184,34 @@ I took a few approaches to designing the programming (for example, the Win32 or 
 Below are brief descriptions of some functions and how they interact with the program:
 
 
-string hexToBinaryConv(string)
+**string hexToBinaryConv(string)**
 
-// After reading in hex number from file, convert the hex value to binary for processing
+- After reading in hex number from file, convert the hex value to binary for processing.
 
 
-long long int binaryToDecimalConv(string)
+**long long int binaryToDecimalConv(string)**
 
-// Converts the binary value to decimal. Needed to incorporate the "long long" for large values (large values were being converted to negatives due to being outside of the int scope)
+- Converts the binary value to decimal. Needed to incorporate the "long long" for large values (large values were being converted to negatives due to being outside of the int scope).
 
-void readConfigFile(string)
+**void readConfigFile(string)**
 
-// Reads lines from config file and calculates number of sets, tag length, offset length, etc.
+- Reads lines from config file and calculates number of sets, tag length, offset length, etc.
 
-void readTraceFile(string);
+**void readTraceFile(string)**
 
-// Reads each line of the trace file.
+- Reads each line of the trace file.
 
-// For each hex line, compare if the hex address's tag is found in it's respective set in the cache
+- For each hex line, compare if the hex address's tag is found in it's respective set in the cache.
 
-// If the tag is found, then count it as a hit, and adjust LRU to MRU value
+- If the tag is found, then count it as a hit, and adjust LRU to MRU value.
 
-// If the tag was not found, count it as a miss, adjust the LRU to the current position, and set the respective set in the cache as the tag
+- If the tag was not found, count it as a miss, adjust the LRU to the current position, and set the respective set in the cache as the tag.
 
-LRESULT CALLBACK SimulationWindowProcedure(HWND, UINT, WPARAM, LPARAM)
+**LRESULT CALLBACK SimulationWindowProcedure(HWND, UINT, WPARAM, LPARAM)**
 
-// Used to create the simulation window in the Win32 API.
+- Used to create the simulation window in the Win32 API.
 
-// Buttons, text fields, and interactions are created here (calls to the above functions)
+- Buttons, text fields, and interactions are created here (calls to the above functions)
 
 
 Other supporting functions can be found in the source code, I wanted to try to keep this README short.
